@@ -2,8 +2,11 @@ $(function(event) {
 
 var $goalkeeper = $('#goalkeeper')
 
+$goalkeeper.click(function(){
+  rightMove();
 
-rightMove();
+})
+
 
 function rightMove() {
 
