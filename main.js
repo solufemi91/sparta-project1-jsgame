@@ -63,7 +63,7 @@ function kickBall(){
       console.log('Ball', $footballImage.position());
       var $keeperPosition = $goalkeeper.position();
 
-      if($keeperPosition.left > 128){
+      if($keeperPosition.left > 128 && $keeperPosition.left < 196){
         alert("its a save")
         stopKeeper();
         save++;
