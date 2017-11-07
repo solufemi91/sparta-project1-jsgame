@@ -7,7 +7,7 @@ var $strikerScore = $('#strikerScore');
 var goal = 0;
 var save = 0;
 var ballDistance = 0;
-var $startAgain = $('button')
+var $startAgain = $('button');
 
 moveKeeperLoop();
 $startAgain.click(function(){
@@ -17,12 +17,12 @@ $startAgain.click(function(){
   $strikerScore.html("Striker: " + goal);
 
   moveKeeperLoop();
-})
+});
 
 $footballImage.click(function(){
   kickBall();
 
-})
+});
 
 
 function moveKeeperLoop(){
@@ -31,12 +31,12 @@ function moveKeeperLoop(){
     moveKeeper();
     i++;
   }
-}
+};
 
 function moveKeeper(){
   $goalkeeper.animate({left: "284px"});
-  $goalkeeper.animate({left:"0px"})
-}
+  $goalkeeper.animate({left:"0px"});
+};
 
 
 function stopKeeper(){
@@ -44,9 +44,9 @@ function stopKeeper(){
   $goalkeeper.stop();
 
 
-}
+};
 
-//create function to stop the goalie
+
 
 function kickBall(){
   var ballDistance = -16;
@@ -77,7 +77,7 @@ function kickBall(){
   }
 }
 
-// best out of five
+// checks the bestscore out of a possible 5
 function checkScore(){
   // each time a score is gained, check to see the whether someone has one the best of five
   if(goal == 3) {
@@ -94,4 +94,4 @@ function checkScore(){
 }
 
 
-})
+});
