@@ -2,45 +2,43 @@ $(function(event) {
 
 var $goalkeeper = $('#goalkeeper');
 var $footballImage = $('#football');
-var $shootButton = $('button');
 var $keeperScore = $('#keeperScore');
 var $strikerScore = $('#strikerScore');
 var goal = 0;
 var save = 0;
 var ballDistance = 0;
+var $startAgain = $('button')
 
-// alert("Click the keeper first to start him moving. Then when ready, click the football to shoot");
+moveKeeperLoop();
+$startAgain.click(function(){
+  goal = 0;
+  save = 0;
+  $keeperScore.html("Keeper: " + save);
+  $strikerScore.html("Striker: " + goal);
 
+  moveKeeperLoop();
+})
 
 $footballImage.click(function(){
   kickBall();
 
 })
 
-$goalkeeper.click(function(){
-
-  moveKeeperLoop();
-})
-
 
 function moveKeeperLoop(){
   var i = 0;
-  while (i < 10000) {
+  while (i < 50) {
     moveKeeper();
     i++;
-
   }
-
 }
 
 function moveKeeper(){
-  // $goalkeeper.animate({marginLeft: "338px"});
-  // $goalkeeper.animate({marginLeft:"0px"})
   $goalkeeper.animate({left: "338px"});
   $goalkeeper.animate({left:"0px"})
 }
 
-//stop goalkeeper
+
 function stopKeeper(){
   $goalkeeper.clearQueue();
   $goalkeeper.stop();
@@ -51,103 +49,49 @@ function stopKeeper(){
 //create function to stop the goalie
 
 function kickBall(){
-  var ballDistance = 16;
+  var ballDistance = -16;
   var id = setInterval(frame,1);
   function frame() {
-    if (ballDistance == -180){
+    if (ballDistance == -213){
       clearInterval(id);
-      ballDistance = 16;
+      ballDistance = -16;
       var $keeperPosition = $goalkeeper.position();
 
-      if($keeperPosition.left > 118 && $keeperPosition.left < 210){
-        alert("its a save")
-        stopKeeper();
+      if($keeperPosition.left > 99 && $keeperPosition.left < 236){
+        alert("Oh what a fantastic save from the keeper!");
         save++;
+        checkScore();
         $keeperScore.html("Keeper: " + save);
-        $footballImage.css("top", ballDistance + 'px')
+        $footballImage.css("top", ballDistance + 'px');
       } else {
-
-        alert("goal")
-        stopKeeper();
+        alert("Cool, carm and collected. You scored!");
         goal++;
+        checkScore();
         $strikerScore.html("Striker: " + goal);
-        $footballImage.css("top", ballDistance + 'px')
+        $footballImage.css("top", ballDistance + 'px');
       }
     } else {
       ballDistance-- ;
-      $footballImage.css("top", ballDistance + 'px')
+      $footballImage.css("top", ballDistance + 'px');
     }
   }
 }
 
-// function collision($footballImage,$goalkeeper){
-//   var x1 = $footballImage.offset().left;
-//       var y1 = $footballImage.offset().top;
-//       var h1 = $footballImage.outerHeight(true);
-//       var w1 = $footballImage.outerWidth(true);
-//       var b1 = y1 + h1;
-//       var r1 = x1 + w1;
-//       var x2 = $goalkeeper.offset().left;
-//       var y2 = $goalkeeper.offset().top;
-//       var h2 = $goalkeeper.outerHeight(true);
-//       var w2 = $goalkeeper.outerWidth(true);
-//       var b2 = y2 + h2;
-//       var r2 = x2 + w2;
-//
-//       if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false;
-//       return true;
-//
-// };
-//
-// window.setInterval(function() {
-//     $('#result').text(collision($('#football'), $('#goalkeeper')));
-// }, 200);
-//
-//
-// $('#football,#goalkeeper').draggable();
+// best out of five
+function checkScore(){
+  // each time a score is gained, check to see the whether someone has one the best of five
+  if(goal == 3) {
+    alert("You have won the best out of 5. Congratulations you are the winner");
+    stopKeeper();
+  } else if(save == 3) {
+    alert("Unfortunatley you have been the worst out 5. Sorry LOOOOOSER!");
+    stopKeeper();
+  } else {
+    alert("Next round");
+  }
 
 
-
-
-
-/// GOALKEEPER MOVING SIDE TO SIDE
-//
-// function rightMove() {
-//
-//   var pos = -13;
-//   var id = setInterval(frame, 5);
-//   var id2 = 0
-//
-//   function frame() {
-//     if (pos == 323) {
-//       clearInterval(id);
-//       var id2 = setInterval(leftMove, 5)
-//     } else {
-//       pos++;
-// //
-//       $goalkeeper.css("margin-left", pos + 'px');
-//     }
-//   }
-//   function leftMove() {
-//     if (pos == -13){
-//       clearInterval(id2);
-//       setInterval(frame, 5)
-//
-//
-//     } else {
-//     pos--;
-//     $goalkeeper.css("margin-left", pos + 'px');
-//   }
-// }
-//
-//
-// }
-
-
-
-
-
-
+}
 
 
 })
