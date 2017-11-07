@@ -20,13 +20,25 @@ $footballImage.click(function(){
 
 $goalkeeper.click(function(){
   var i = 0;
-  while (i < 5) {
+  while (i < 100) {
     moveKeeper();
     i++;
 
   }
 
 });
+
+
+//stop goalkeeper
+$keeperScore.click(function(){
+  $goalkeeper.clearQueue();
+  $goalkeeper.stop();
+
+
+})
+
+//create function to stop the goalie
+
 
 
 function moveKeeper(){
@@ -40,9 +52,12 @@ function kickBall(){
   var id = setInterval(frame,1);
   function frame() {
     if (ballDistance == -356){
+      //call function to stop goalie
       clearInterval(id);
       ballDistance = 16;
-      alert("goal")
+      $goalkeeper.position();
+      console.log($goalkeeper.position())
+      // alert("goal")
       score++;
       $strikerScore.html("Striker: " + score)
       $footballImage.css("margin-top", ballDistance + 'px')
