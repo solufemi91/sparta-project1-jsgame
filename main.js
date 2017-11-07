@@ -3,9 +3,10 @@ $(function(event) {
 var $goalkeeper = $('#goalkeeper');
 var $footballImage = $('#football');
 var $shootButton = $('button');
-var $keeperScore = $('#keeperScore')
-var $strikerScore = $('#strikerScore')
-var score = 0
+var $keeperScore = $('#keeperScore');
+var $strikerScore = $('#strikerScore');
+var goal = 0;
+var save = 0;
 var ballDistance = 0;
 
 // alert("Click the keeper first to start him moving. Then when ready, click the football to shoot");
@@ -60,11 +61,22 @@ function kickBall(){
       // $goalkeeper.position();
       console.log('Goalie', $goalkeeper.position());
       console.log('Ball', $footballImage.position());
-      alert("goal")
-      stopKeeper();
-      score++;
-      $strikerScore.html("Striker: " + score)
-      $footballImage.css("top", ballDistance + 'px')
+      var $keeperPosition = $goalkeeper.position();
+
+      if($keeperPosition.left > 128){
+        alert("its a save")
+        stopKeeper();
+        save++;
+        $keeperScore.html("Keeper: " + save);
+        $footballImage.css("top", ballDistance + 'px')
+      } else {
+
+        alert("goal")
+        stopKeeper();
+        goal++;
+        $strikerScore.html("Striker: " + goal);
+        $footballImage.css("top", ballDistance + 'px')
+      }
     } else {
       ballDistance-- ;
       $footballImage.css("top", ballDistance + 'px')
