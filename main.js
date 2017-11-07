@@ -54,16 +54,12 @@ function kickBall(){
   var ballDistance = 16;
   var id = setInterval(frame,1);
   function frame() {
-    if (ballDistance == -147){
+    if (ballDistance == -180){
       clearInterval(id);
-
       ballDistance = 16;
-      // $goalkeeper.position();
-      console.log('Goalie', $goalkeeper.position());
-      console.log('Ball', $footballImage.position());
       var $keeperPosition = $goalkeeper.position();
 
-      if($keeperPosition.left > 128 && $keeperPosition.left < 196){
+      if($keeperPosition.left > 118 && $keeperPosition.left < 210){
         alert("its a save")
         stopKeeper();
         save++;
