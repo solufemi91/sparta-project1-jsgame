@@ -26,12 +26,12 @@
 
 <script>
 
-for(i = 0; i < 2; i++){
-rightMove();
+// for(i = 0; i < 2; i++){
+// rightMove();
 
 
-console.log(i)
-}
+// console.log(i)
+// }
 
 
 function rightMove() {
@@ -52,6 +52,7 @@ function rightMove() {
   function leftMove() {
     if (pos == 0){
       clearInterval(id2);
+      setInterval(frame, 5);
     } else {
     pos--;
     redBox.style.left = pos + 'px'

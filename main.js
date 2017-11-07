@@ -1,12 +1,37 @@
 $(function(event) {
 
 var $goalkeeper = $('#goalkeeper')
+var $football = $('#football')
+var $shootButton = $('button')
+
+$shootButton.click(function(){
+  kickBall();
+})
+
+$football.click(function(){
+  kickBall();
+})
 
 $goalkeeper.click(function(){
   rightMove();
 
+
 })
 
+function kickBall(){
+  var ballDistance = 16;
+  var id = setInterval(frame,5);
+  function frame() {
+    if (ballDistance == -156){
+      clearInterval(id);
+      ballDistance = 16;
+      $football.css("margin-top", ballDistance + 'px')
+    } else {
+      ballDistance-- ;
+      $football.css("margin-top", ballDistance + 'px')
+    }
+  }
+}
 
 function rightMove() {
 
@@ -26,6 +51,7 @@ function rightMove() {
   function leftMove() {
     if (pos == -13){
       clearInterval(id2);
+      setInterval(frame, 5)
     } else {
     pos--;
     $goalkeeper.css("margin-left", pos + 'px');
