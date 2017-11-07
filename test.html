@@ -26,36 +26,33 @@
 
 <script>
 
-// for(i = 0; i < 2; i++){
-// rightMove();
+var i = 0
+while(i < 3){
+  rightMove();
 
-
-// console.log(i)
-// }
-
-
-function rightMove() {
-  var redBox = document.getElementById("animate");
-  var pos = 0;
-  var id = setInterval(frame, 5);
-  var id2 = 0
-  function frame() {
-    if (pos == 350) {
-      clearInterval(id);
-      var id2 = setInterval(leftMove, 5)
-    } else {
-      pos++;
-
-      redBox.style.left = pos + 'px';
+  function rightMove() {
+    var redBox = document.getElementById("animate");
+    var pos = 0;
+    var id = setInterval(frame, 5);
+    var id2 = 0
+    function frame() {
+      if (pos == 350) {
+        clearInterval(id);
+        var id2 = setInterval(leftMove, 5)
+      } else {
+        pos++;
+        redBox.style.left = pos + 'px';
+      }
     }
-  }
-  function leftMove() {
-    if (pos == 0){
-      clearInterval(id2);
-      setInterval(frame, 5);
-    } else {
-    pos--;
-    redBox.style.left = pos + 'px'
+    function leftMove() {
+      if (pos == 0){
+        clearInterval(id2);
+        i++;
+        setInterval(frame, 5);
+      } else {
+      pos--;
+      redBox.style.left = pos + 'px'
+    }
   }
 }
 
