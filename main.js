@@ -34,7 +34,7 @@ function moveKeeperLoop(){
 }
 
 function moveKeeper(){
-  $goalkeeper.animate({left: "338px"});
+  $goalkeeper.animate({left: "284px"});
   $goalkeeper.animate({left:"0px"})
 }
 
@@ -57,7 +57,7 @@ function kickBall(){
       ballDistance = -16;
       var $keeperPosition = $goalkeeper.position();
 
-      if($keeperPosition.left > 99 && $keeperPosition.left < 236){
+      if($keeperPosition.left > 50 && $keeperPosition.left < 227){
         alert("Oh what a fantastic save from the keeper!");
         save++;
         checkScore();
