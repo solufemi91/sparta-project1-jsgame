@@ -12,6 +12,8 @@ var $startAgain = $('button');
 alert("Click the football to shoot");
 
 moveKeeperLoop();
+
+// A button to reset the game and put the scores back to zero
 $startAgain.click(function(){
   goal = 0;
   save = 0;
@@ -21,12 +23,13 @@ $startAgain.click(function(){
   moveKeeperLoop();
 });
 
+// an  event listener for shooting the ball when it is clicked
 $footballImage.click(function(){
   kickBall();
 
 });
 
-
+// this function moves the keeper side to side 100 times
 function moveKeeperLoop(){
   var i = 0;
   while (i < 100) {
@@ -35,12 +38,13 @@ function moveKeeperLoop(){
   }
 };
 
+//this code is responsible for moving the keeper to the left and right once
 function moveKeeper(){
   $goalkeeper.animate({left: "284px"});
   $goalkeeper.animate({left:"0px"});
 };
 
-
+// this code is responsible for stopping the keeper
 function stopKeeper(){
   $goalkeeper.clearQueue();
   $goalkeeper.stop();
@@ -49,7 +53,8 @@ function stopKeeper(){
 };
 
 
-
+// when this function is called, the ball moves towards the keeper.
+// when the ball reaches the goal, the function checks the position of the keeper to determine whether it is a save or not.
 function kickBall(){
   var ballDistance = -16;
   var id = setInterval(frame,1);
