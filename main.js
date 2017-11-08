@@ -9,6 +9,8 @@ var save = 0;
 var ballDistance = 0;
 var $startAgain = $('button');
 
+alert("Click the football to shoot");
+
 moveKeeperLoop();
 $startAgain.click(function(){
   goal = 0;
