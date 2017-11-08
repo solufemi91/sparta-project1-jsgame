@@ -71,15 +71,15 @@ function kickBall(){
         $keeperScore.html("Keeper: " + save);
         $footballImage.css("top", ballDistance + 'px');
       } else {
-        alert("Cool, carm and collected. You scored!");
-        goal++;
-        checkScore();
-        $strikerScore.html("Striker: " + goal);
-        $footballImage.css("top", ballDistance + 'px');
+          alert("Cool, carm and collected. You scored!");
+          goal++;
+          checkScore();
+          $strikerScore.html("Striker: " + goal);
+          $footballImage.css("top", ballDistance + 'px');
       }
     } else {
-      ballDistance-- ;
-      $footballImage.css("top", ballDistance + 'px');
+        ballDistance-- ;
+        $footballImage.css("top", ballDistance + 'px');
     }
   }
 }
