@@ -12,7 +12,7 @@ var $theActualGoal = $('#theActualGoal');
 var $container = $('.container');
 var $body = $('body');
 var $goalKeeperPositionsArray = [0, 44, 111, 194, 250];
-var keeperDirection = 0;
+var keeperPosition = 0;
 var ballPosition = 0;
 
 
@@ -20,9 +20,9 @@ var ballPosition = 0;
 //generates a random move for the keeper
 
 function randomKeeperMove(){
-  keeperDirection = $goalKeeperPositionsArray[Math.floor(Math.random() * 5)]
+  keeperPosition = $goalKeeperPositionsArray[Math.floor(Math.random() * 5)]
   $goalkeeper.animate({
-    left: keeperDirection +"px"
+    left: keeperPosition +"px"
   },100);
 
 }
@@ -41,6 +41,8 @@ $theActualGoal.click(function(event){
   }, 50);
 
   ballPosition = event.pageX -33.5;
+  console.log("The keeper position is: " + keeperPosition);
+  console.log("The ball position is: " + ballPosition);
 
   saveOrGoal();
 
@@ -59,22 +61,26 @@ $theActualGoal.click(function(event){
 
 function saveOrGoal() {
 
-  if(keeperDirection == 0 && ballPosition > 678 && ballPosition < 805){
+  if(keeperPosition == 0 && ballPosition > 678 && ballPosition < 805){
     save++;
     $keeperScore.html('Keeper: ' + save);
-  } else if(keeperDirection == 44 && ballPosition > 677 && ballPosition < 853){
+  } else if(keeperPosition == 44 && ballPosition > 677 && ballPosition < 853){
     save++;
     $keeperScore.html('Keeper: ' + save);
-  } else if(keeperDirection == 111 && ballPosition > 747 && ballPosition < 913){
+  } else if(keeperPosition == 111 && ballPosition > 747 && ballPosition < 913){
     save++;
     $keeperScore.html('Keeper: ' + save);
-  } else if(keeperDirection == 194 && ballPosition > 831 && ballPosition < 997){
+  } else if(keeperPosition == 194 && ballPosition > 831 && ballPosition < 997){
     save++;
     $keeperScore.html('Keeper: ' + save);
-  } else if(keeperDirection == 250 && ballPosition > 884 && ballPosition < 1001){
+  } else if(keeperPosition == 250 && ballPosition > 884 && ballPosition < 1001){
     save++;
     $keeperScore.html('Keeper: ' + save);
-  } else {
+  } else if(ballPosition < 677 || ballPosition > 1001){
+    save++;
+    $keeperScore.html('Keeper: ' + save);
+  }
+    else {
     goal++;
     $strikerScore.html('Striker: ' + goal);
   }
