@@ -40,19 +40,25 @@ $theActualGoal.click(function(event){
     left: event.pageX -33.5 + "px",
   }, 50);
 
-ballPosition = event.pageX -33.5;
-console.log(ballPosition);
+  ballPosition = event.pageX -33.5;
 
- saveOrGoal();
+  saveOrGoal();
+
+  $footballImage.animate({
+    top: '338px',
+    left: '835px' ,
+
+  },1000);
+
+  $goalkeeper.animate({
+    left: '111px'
+  }, 1000)
 
 });
 
-// check if its a save or a goal
-// get position of keeper and check if its in the same position as where the ball is.
-function saveOrGoal() {
-  console.log("The keeper's x axis is " + keeperDirection);
 
-  //keeper position 0
+function saveOrGoal() {
+
   if(keeperDirection == 0 && ballPosition > 678 && ballPosition < 805){
     save++;
     $keeperScore.html('Keeper: ' + save);
@@ -74,9 +80,6 @@ function saveOrGoal() {
   }
 
 }
- //if so, then its a save.
-// if not, then its a goal
-
 
 // resets the game
 
