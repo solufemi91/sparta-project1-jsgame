@@ -11,8 +11,9 @@ var $startAgain = $('button');
 var $theActualGoal = $('#theActualGoal');
 var $container = $('.container');
 var $body = $('body');
-var $goalKeeperPositionsArray = [0, 44, 111, 194, 250]
-var keeperDirection = 0
+var $goalKeeperPositionsArray = [0, 44, 111, 194, 250];
+var keeperDirection = 0;
+var ballPosition = 0;
 
 
 
@@ -39,20 +40,38 @@ $theActualGoal.click(function(event){
     left: event.pageX -33.5 + "px",
   }, 50);
 
-  
+ballPosition = event.pageX -33.5;
+console.log(ballPosition);
 
- getKeeperPosition();
+ saveOrGoal();
 
 });
 
 // check if its a save or a goal
 // get position of keeper and check if its in the same position as where the ball is.
-function getKeeperPosition() {
-  console.log(keeperDirection);
-  var footballposition   = $footballImage.position()
-  console.log(footballposition.left)
-  // if keeper position is 44, query if the ball is in a particular range to be saved
-  // if so, then its  save.
+function saveOrGoal() {
+  console.log("The keeper's x axis is " + keeperDirection);
+
+  //keeper position 0
+  if(keeperDirection == 0 && ballPosition > 678 && ballPosition < 805){
+    save++;
+    $keeperScore.html('Keeper: ' + save);
+  } else if(keeperDirection == 44 && ballPosition > 677 && ballPosition < 853){
+    save++;
+    $keeperScore.html('Keeper: ' + save);
+  } else if(keeperDirection == 111 && ballPosition > 747 && ballPosition < 913){
+    save++;
+    $keeperScore.html('Keeper: ' + save);
+  } else if(keeperDirection == 194 && ballPosition > 831 && ballPosition < 997){
+    save++;
+    $keeperScore.html('Keeper: ' + save);
+  } else if(keeperDirection == 250 && ballPosition > 884 && ballPosition < 1001){
+    save++;
+    $keeperScore.html('Keeper: ' + save);
+  } else {
+    goal++;
+    $strikerScore.html('Striker: ' + goal);
+  }
 
 }
  //if so, then its a save.
