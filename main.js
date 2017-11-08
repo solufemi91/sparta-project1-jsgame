@@ -11,10 +11,12 @@ var $startAgain = $('button');
 var $theActualGoal = $('#theActualGoal');
 var $container = $('.container');
 var $body = $('body');
+var $goalKeeperPositionsArray = [0, 44, 111, 194, 250]
+
 
 // alert("Click the football to shoot");
 
-moveKeeperLoop();
+// moveKeeperLoop();
 
 // A button to reset the game and put the scores back to zero
 $startAgain.click(function(){
@@ -33,23 +35,32 @@ $footballImage.click(function(){
 });
 
 // this function moves the keeper side to side 100 times
-function moveKeeperLoop(){
-  var i = 0;
-  while (i < 1000) {
-    moveKeeper();
-    i++;
-  }
-};
+// function moveKeeperLoop(){
+//   var i = 0;
+//   while (i < 1000) {
+//     moveKeeper();
+//     i++;
+//   }
+// };
 
 //this code is responsible for moving the keeper to the left and right once
-function moveKeeper(){
+// function moveKeeper(){
+//   $goalkeeper.animate({
+//     left: "239px"
+//   },50);
+//   $goalkeeper.animate({
+//     left:"0px"
+//   }, 50);
+// };
+
+function randomKeeperMove(){
+  var keeperDirection = $goalKeeperPositionsArray[Math.floor(Math.random() * 5)]
   $goalkeeper.animate({
-    left: "239px"
-  },50);
-  $goalkeeper.animate({
-    left:"0px"
-  }, 50);
-};
+    left: keeperDirection +"px"
+  },100);
+
+}
+
 
 // this code is responsible for stopping the keeper
 function stopKeeper(){
@@ -109,16 +120,17 @@ function checkScore(){
 
 
 // do event listener for the actual goal
-$container.click(function(event){
+$theActualGoal.click(function(event){
 
+  randomKeeperMove();
   $footballImage.animate({
     top: event.pageY -30 + "px",
     left: event.pageX -33.5 + "px",
   }, 50);
-  
+
 
   //i want the keeper to stop moving when the ball arrives at its destination
-stopKeeper();
+// stopKeeper();
 
 });
 
