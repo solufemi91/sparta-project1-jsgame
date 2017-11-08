@@ -58,17 +58,17 @@
 
 
 #goalkeeper{
-  width: 103px;
+  width: 148px;
   height: 98px;
   left: 0px;
   position: absolute;
 }
 #football{
   vertical-align: middle;
-  height: 131px;
-  width: 153px;
-  left: 792px;
-  top: 268px;
+  height: 60px;
+  width: 67px;
+  left: 835px;
+  top: 338px;
   position: absolute;
   z-index: 100;
 }

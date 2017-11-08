@@ -12,9 +12,9 @@ var $theActualGoal = $('#theActualGoal');
 var $container = $('.container');
 var $body = $('body');
 
-alert("Click the football to shoot");
+// alert("Click the football to shoot");
 
-// moveKeeperLoop();
+moveKeeperLoop();
 
 // A button to reset the game and put the scores back to zero
 $startAgain.click(function(){
@@ -43,8 +43,12 @@ function moveKeeperLoop(){
 
 //this code is responsible for moving the keeper to the left and right once
 function moveKeeper(){
-  $goalkeeper.animate({left: "284px"});
-  $goalkeeper.animate({left:"0px"});
+  $goalkeeper.animate({
+    left: "239px"
+  },50);
+  $goalkeeper.animate({
+    left:"0px"
+  }, 50);
 };
 
 // this code is responsible for stopping the keeper
@@ -106,24 +110,21 @@ function checkScore(){
 
 // do event listener for the actual goal
 $container.click(function(event){
-  showCoords(event);
 
   $footballImage.animate({
-    top: event.pageY + "px",
-    left: event.pageX + "px",
-  }, 300);
+    top: event.pageY -30 + "px",
+    left: event.pageX -33.5 + "px",
+  }, 50);
+  
+
+  //i want the keeper to stop moving when the ball arrives at its destination
+stopKeeper();
+
 });
 
 
-function showCoords(event) {
-  var x = event.pageX;
-  var y = event.pageY;
-  var coords = "X coords: " +  x + " , Y coords: " + y;
-  console.log(coords);
 
-}
 
-// get the coordinates for the destination for the ball
 
 
 });
