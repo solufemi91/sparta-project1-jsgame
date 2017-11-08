@@ -107,14 +107,17 @@ function checkScore(){
 // do event listener for the actual goal
 $theActualGoal.click(function(event){
   showCoords(event);
-  function showCoords(event) {
-    var x = event.clientX;
-    var y = event.clientY;
-    var coords = "X coords: " +  x + " , Y coords: " + y;
-    console.log(coords);
-
-  }
+  $footballImage.animate({top: "-216px"});
 });
+
+
+function showCoords(event) {
+  var x = event.clientX;
+  var y = event.clientY;
+  var coords = "X coords: " +  x + " , Y coords: " + y;
+  console.log(coords);
+
+}
 
 // get the coordinates for the destination for the ball
 
