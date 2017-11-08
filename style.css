@@ -65,11 +65,12 @@
 }
 #football{
   vertical-align: middle;
-  height: 141px;
-  width: 194px;
-  left: 96px;
-  top: -16px;
+  height: 131px;
+  width: 153px;
+  left: 792px;
+  top: 268px;
   position: absolute;
+  z-index: 100;
 }
 
 #penaltybox{

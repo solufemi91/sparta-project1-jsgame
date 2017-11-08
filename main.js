@@ -58,34 +58,34 @@ function stopKeeper(){
 
 // when this function is called, the ball moves towards the keeper.
 // when the ball reaches the goal, the function checks the position of the keeper to determine whether it is a save or not.
-function kickBall(){
-  var ballDistance = -16;
-  var id = setInterval(frame,1);
-  function frame() {
-    if (ballDistance == -213){
-      clearInterval(id);
-      ballDistance = -16;
-      var $keeperPosition = $goalkeeper.position();
-
-      if($keeperPosition.left > 50 && $keeperPosition.left < 227){
-        alert("Oh what a fantastic save from the keeper!");
-        save++;
-        checkScore();
-        $keeperScore.html("Keeper: " + save);
-        $footballImage.css("top", ballDistance + 'px');
-      } else {
-          alert("Cool, carm and collected. You scored!");
-          goal++;
-          checkScore();
-          $strikerScore.html("Striker: " + goal);
-          $footballImage.css("top", ballDistance + 'px');
-      }
-    } else {
-        ballDistance-- ;
-        $footballImage.css("top", ballDistance + 'px');
-    }
-  }
-}
+// function kickBall(){
+//   var ballDistance = -16;
+//   var id = setInterval(frame,1);
+//   function frame() {
+//     if (ballDistance == -213){
+//       clearInterval(id);
+//       ballDistance = -16;
+//       var $keeperPosition = $goalkeeper.position();
+//
+//       if($keeperPosition.left > 50 && $keeperPosition.left < 227){
+//         alert("Oh what a fantastic save from the keeper!");
+//         save++;
+//         checkScore();
+//         $keeperScore.html("Keeper: " + save);
+//         $footballImage.css("top", ballDistance + 'px');
+//       } else {
+//           alert("Cool, carm and collected. You scored!");
+//           goal++;
+//           checkScore();
+//           $strikerScore.html("Striker: " + goal);
+//           $footballImage.css("top", ballDistance + 'px');
+//       }
+//     } else {
+//         ballDistance-- ;
+//         $footballImage.css("top", ballDistance + 'px');
+//     }
+//   }
+// }
 
 // checks the bestscore out of a possible 5
 function checkScore(){
@@ -105,15 +105,19 @@ function checkScore(){
 
 
 // do event listener for the actual goal
-$theActualGoal.click(function(event){
+$container.click(function(event){
   showCoords(event);
-  $footballImage.animate({top: "-216px"});
+
+  $footballImage.animate({
+    top: event.pageY + "px",
+    left: event.pageX + "px",
+  }, 300);
 });
 
 
 function showCoords(event) {
-  var x = event.clientX;
-  var y = event.clientY;
+  var x = event.pageX;
+  var y = event.pageY;
   var coords = "X coords: " +  x + " , Y coords: " + y;
   console.log(coords);
 
