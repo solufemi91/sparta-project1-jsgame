@@ -8,10 +8,13 @@ var goal = 0;
 var save = 0;
 var ballDistance = 0;
 var $startAgain = $('button');
+var $theActualGoal = $('#theActualGoal');
+var $container = $('.container');
+var $body = $('body');
 
 alert("Click the football to shoot");
 
-moveKeeperLoop();
+// moveKeeperLoop();
 
 // A button to reset the game and put the scores back to zero
 $startAgain.click(function(){
@@ -32,7 +35,7 @@ $footballImage.click(function(){
 // this function moves the keeper side to side 100 times
 function moveKeeperLoop(){
   var i = 0;
-  while (i < 100) {
+  while (i < 1000) {
     moveKeeper();
     i++;
   }
@@ -99,6 +102,21 @@ function checkScore(){
 
 
 }
+
+
+// do event listener for the actual goal
+$theActualGoal.click(function(event){
+  showCoords(event);
+  function showCoords(event) {
+    var x = event.clientX;
+    var y = event.clientY;
+    var coords = "X coords: " +  x + " , Y coords: " + y;
+    console.log(coords);
+
+  }
+});
+
+// get the coordinates for the destination for the ball
 
 
 });
