@@ -29,7 +29,7 @@ $footballImage.click(function(){
 
 function moveKeeperLoop(){
   var i = 0;
-  while (i < 50) {
+  while (i < 100) {
     moveKeeper();
     i++;
   }
