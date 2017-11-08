@@ -14,6 +14,7 @@ var $body = $('body');
 var $goalKeeperPositionsArray = [0, 44, 111, 194, 250];
 var keeperPosition = 0;
 var ballPosition = 0;
+var ballTopPosition = 0
 
 
 
@@ -40,6 +41,7 @@ $theActualGoal.click(function(event){
     left: event.pageX -33.5 + "px",
   }, 50);
 
+  ballTopPosition = event.pageY -30;
   ballPosition = event.pageX -33.5;
   console.log("The keeper position is: " + keeperPosition);
   console.log("The ball position is: " + ballPosition);
@@ -79,12 +81,15 @@ function saveOrGoal() {
   } else if(ballPosition < 677 || ballPosition > 1001){
     save++;
     $keeperScore.html('Keeper: ' + save);
+  } else if(ballTopPosition < 99 || ballTopPosition > 139){
+    save++;
+    $keeperScore.html('Keeper: ' + save);
   }
     else {
     goal++;
     $strikerScore.html('Striker: ' + goal);
   }
-
+    checkScore();
 }
 
 // resets the game
@@ -101,16 +106,13 @@ $startAgain.click(function(){
 // checks the bestscore out of a possible 5
 function checkScore(){
   // each time a score is gained, check to see the whether someone has one the best of five
-  if(goal == 3) {
-    alert("You have won the best out of 5. Congratulations you are the winner");
-    stopKeeper();
-  } else if(save == 3) {
-    alert("Unfortunatley you have been the worst out 5. Sorry LOOOOOSER!");
-    stopKeeper();
-  } else {
-    alert("Next round");
-  }
+  if(goal == 10) {
+    alert("You have won");
 
+  } else if(save == 10) {
+    alert("Unfortunatley you have been the worst out 5. Sorry LOOOOOSER!");
+
+  }
 
 }
 
