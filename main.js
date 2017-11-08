@@ -12,95 +12,63 @@ var $theActualGoal = $('#theActualGoal');
 var $container = $('.container');
 var $body = $('body');
 var $goalKeeperPositionsArray = [0, 44, 111, 194, 250]
+var keeperDirection = 0
 
 
-// alert("Click the football to shoot");
 
-// moveKeeperLoop();
-
-// A button to reset the game and put the scores back to zero
-$startAgain.click(function(){
-  goal = 0;
-  save = 0;
-  $keeperScore.html("Keeper: " + save);
-  $strikerScore.html("Striker: " + goal);
-
-  moveKeeperLoop();
-});
-
-// an  event listener for shooting the ball when it is clicked
-$footballImage.click(function(){
-  kickBall();
-
-});
-
-// this function moves the keeper side to side 100 times
-// function moveKeeperLoop(){
-//   var i = 0;
-//   while (i < 1000) {
-//     moveKeeper();
-//     i++;
-//   }
-// };
-
-//this code is responsible for moving the keeper to the left and right once
-// function moveKeeper(){
-//   $goalkeeper.animate({
-//     left: "239px"
-//   },50);
-//   $goalkeeper.animate({
-//     left:"0px"
-//   }, 50);
-// };
+//generates a random move for the keeper
 
 function randomKeeperMove(){
-  var keeperDirection = $goalKeeperPositionsArray[Math.floor(Math.random() * 5)]
+  keeperDirection = $goalKeeperPositionsArray[Math.floor(Math.random() * 5)]
   $goalkeeper.animate({
     left: keeperDirection +"px"
   },100);
 
 }
 
+// event listener for when an area of the goal is clicked
 
-// this code is responsible for stopping the keeper
-function stopKeeper(){
-  $goalkeeper.clearQueue();
-  $goalkeeper.stop();
+$theActualGoal.click(function(event){
+
+  // moves the keeper
+  randomKeeperMove();
+
+  // moves the ball to where the person choose to shoot
+  $footballImage.animate({
+    top: event.pageY -30 + "px",
+    left: event.pageX -33.5 + "px",
+  }, 50);
+
+  
+
+ getKeeperPosition();
+
+});
+
+// check if its a save or a goal
+// get position of keeper and check if its in the same position as where the ball is.
+function getKeeperPosition() {
+  console.log(keeperDirection);
+  var footballposition   = $footballImage.position()
+  console.log(footballposition.left)
+  // if keeper position is 44, query if the ball is in a particular range to be saved
+  // if so, then its  save.
+
+}
+ //if so, then its a save.
+// if not, then its a goal
 
 
-};
+// resets the game
+
+$startAgain.click(function(){
+  goal = 0;
+  save = 0;
+  $keeperScore.html("Keeper: " + save);
+  $strikerScore.html("Striker: " + goal);
 
 
-// when this function is called, the ball moves towards the keeper.
-// when the ball reaches the goal, the function checks the position of the keeper to determine whether it is a save or not.
-// function kickBall(){
-//   var ballDistance = -16;
-//   var id = setInterval(frame,1);
-//   function frame() {
-//     if (ballDistance == -213){
-//       clearInterval(id);
-//       ballDistance = -16;
-//       var $keeperPosition = $goalkeeper.position();
-//
-//       if($keeperPosition.left > 50 && $keeperPosition.left < 227){
-//         alert("Oh what a fantastic save from the keeper!");
-//         save++;
-//         checkScore();
-//         $keeperScore.html("Keeper: " + save);
-//         $footballImage.css("top", ballDistance + 'px');
-//       } else {
-//           alert("Cool, carm and collected. You scored!");
-//           goal++;
-//           checkScore();
-//           $strikerScore.html("Striker: " + goal);
-//           $footballImage.css("top", ballDistance + 'px');
-//       }
-//     } else {
-//         ballDistance-- ;
-//         $footballImage.css("top", ballDistance + 'px');
-//     }
-//   }
-// }
+});
 
 // checks the bestscore out of a possible 5
 function checkScore(){
@@ -119,20 +87,7 @@ function checkScore(){
 }
 
 
-// do event listener for the actual goal
-$theActualGoal.click(function(event){
 
-  randomKeeperMove();
-  $footballImage.animate({
-    top: event.pageY -30 + "px",
-    left: event.pageX -33.5 + "px",
-  }, 50);
-
-
-  //i want the keeper to stop moving when the ball arrives at its destination
-// stopKeeper();
-
-});
 
 
 
