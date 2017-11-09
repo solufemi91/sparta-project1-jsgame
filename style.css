@@ -1,8 +1,10 @@
 
-.btn-warning {
-    color: #fff;
-    background-color: red;
-    border-color: red;
+button {
+  margin-left: 136px;
+  margin-top: 32px;
+  height: 38px;
+  color: green;
+  background: yellow;
 }
 
 .container{
@@ -15,9 +17,9 @@
 
 }
 
-.two{
-  background-color: white;
+#theActualGoal{
   height: 100px;
+  background-image: url('./images/netting.jpg');
 }
 
 .three{
