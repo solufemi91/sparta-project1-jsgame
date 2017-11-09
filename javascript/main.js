@@ -7,11 +7,8 @@ $(function(event) {
  var $strikerScore = $('#strikerScore');
  var goal = 0;
  var save = 0;
- var ballDistance = 0;
  var $startAgain = $('button');
  var $theActualGoal = $('#theActualGoal');
- var $container = $('.container');
- var $body = $('body');
  var $goalKeeperLeftArray = [0,250];
  var $goalKeeperRightArray = [0,250];
  var $goalKeeperCentreArray = [111,250];
@@ -19,7 +16,7 @@ $(function(event) {
  var ballPosition = 0;
  var ballTopPosition = 0;
  var $winnerBoard = $('#winner');
- var $playAgainTextBoard = $('#playAgainTextBoard')
+ var $playAgainTextBoard = $('#playAgainTextBoard');
  $keeperScore.html("Keeper: " + save);
  $strikerScore.html("Striker: " + goal);
 
@@ -29,19 +26,19 @@ $(function(event) {
 function randomKeeperMove(){
 
   if(ballPosition > 678 && ballPosition < 805){
-    keeperPosition = $goalKeeperLeftArray[Math.floor(Math.random() * 2)]
+    keeperPosition = $goalKeeperLeftArray[Math.floor(Math.random() * 2)];
     $goalkeeper.animate({
       left: keeperPosition + "px"
     },100);
   }
   else if(ballPosition > 747 && ballPosition < 913){
-    keeperPosition = $goalKeeperCentreArray[Math.floor(Math.random() * 2)]
+    keeperPosition = $goalKeeperCentreArray[Math.floor(Math.random() * 2)];
     $goalkeeper.animate({
       left: keeperPosition + "px"
     },100);
   }
   else if(ballPosition > 884 && ballPosition < 1001){
-    keeperPosition = $goalKeeperRightArray[Math.floor(Math.random() * 2)]
+    keeperPosition = $goalKeeperRightArray[Math.floor(Math.random() * 2)];
     $goalkeeper.animate({
       left: keeperPosition + "px"
     },100);
@@ -122,7 +119,7 @@ $startAgain.click(function(){
 
 // checks after each penalty whether the keeper or striker has 10 points
 function checkScore(){
-  
+
   if(goal == 10) {
     $winnerBoard.append('You won!! ');
     $playAgainTextBoard.append("Click Play Again");
