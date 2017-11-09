@@ -15,6 +15,7 @@ var $goalKeeperPositionsArray = [0,0,111,250,250];
 var keeperPosition = 0;
 var ballPosition = 0;
 var ballTopPosition = 0
+var $winnerBoard = $('#winner')
 
 
 
@@ -66,13 +67,7 @@ function saveOrGoal() {
   if(keeperPosition == 0 && ballPosition > 678 && ballPosition < 805){
     save++;
     $keeperScore.html('Keeper: ' + save);
-  } else if(keeperPosition == 44 && ballPosition > 677 && ballPosition < 853){
-    save++;
-    $keeperScore.html('Keeper: ' + save);
   } else if(keeperPosition == 111 && ballPosition > 747 && ballPosition < 913){
-    save++;
-    $keeperScore.html('Keeper: ' + save);
-  } else if(keeperPosition == 194 && ballPosition > 831 && ballPosition < 997){
     save++;
     $keeperScore.html('Keeper: ' + save);
   } else if(keeperPosition == 250 && ballPosition > 884 && ballPosition < 1001){
@@ -84,8 +79,7 @@ function saveOrGoal() {
   } else if(ballTopPosition < 99 || ballTopPosition > 139){
     save++;
     $keeperScore.html('Keeper: ' + save);
-  }
-    else {
+  } else {
     goal++;
     $strikerScore.html('Striker: ' + goal);
   }
@@ -107,10 +101,10 @@ $startAgain.click(function(){
 function checkScore(){
   // each time a score is gained, check to see the whether someone has one the best of five
   if(goal == 10) {
-    alert("You have won");
+    $winnerBoard.append('You won!!')
 
   } else if(save == 10) {
-    alert("Unfortunatley you have been the worst out 5. Sorry LOOOOOSER!");
+    $winnerBoard.append('You loose!!')
 
   }
 

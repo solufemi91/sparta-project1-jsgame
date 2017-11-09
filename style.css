@@ -104,5 +104,10 @@ h3 {
 
 span{
   cursor: crosshair;
+}
 
+#winner{
+  text-align: center;
+  color: yellow;
+  font-size: 411%;
 }
