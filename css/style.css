@@ -20,7 +20,7 @@ button {
 #theActualGoal{
   height: 100px;
   background: green;
-  background-image: url('./images/netting2.png');
+  background-image: url('../images/netting2.png');
 
 }
 
@@ -119,7 +119,7 @@ h3 {
   font-size: 411%;
   border-bottom: 3px solid white;
   background-size: 190px;
-  background-image: url('./images/stoke crowd.png');
+  background-image: url('../images/stoke crowd.png');
 }
 
 #playAgainTextBoard{
@@ -131,19 +131,19 @@ h3 {
 #leftSideOfGoal{
   border-bottom: 3px solid white;
   background-size: 190px;
-  background-image: url('./images/stoke crowd.png');
+  background-image: url('../images/stoke crowd.png');
 }
 
 #northWestOfGoal{
   border-bottom: 3px solid white;
   background-size: 190px;
-  background-image: url('./images/stoke crowd.png');
+  background-image: url('../images/stoke crowd.png');
 }
 
 #northEastOfGoal{
   border-bottom: 3px solid white;
   background-size: 190px;
-  background-image: url('./images/stoke crowd.png');
+  background-image: url('../images/stoke crowd.png');
 }
 
 
