@@ -8,7 +8,7 @@ button {
 }
 
 .container{
-  background-color: red;
+  background-color: none;
 }
 
 .one{
@@ -19,7 +19,8 @@ button {
 
 #theActualGoal{
   height: 100px;
-  background-image: url('./images/netting.jpg');
+  background: green;
+  background-image: url('./images/netting2.png');
 }
 
 .three{
@@ -104,8 +105,9 @@ h3 {
   margin-top: 3px;
 }
 
-span{
+.custom{
   cursor: crosshair;
+  /*cursor: url('./images/football.jpeg'), auto;*/
 }
 
 #winner{
@@ -118,4 +120,7 @@ span{
   text-align: center;
   color: yellow;
   font-size: 311%;
+}
+
+.custom {
 }
