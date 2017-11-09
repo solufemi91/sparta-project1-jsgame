@@ -7,11 +7,8 @@ $(function(event) {
  var $strikerScore = $('#strikerScore');
  var goal = 0;
  var save = 0;
- var ballDistance = 0;
  var $startAgain = $('button');
  var $theActualGoal = $('#theActualGoal');
- var $container = $('.container');
- var $body = $('body');
  var $goalKeeperLeftArray = [0,250];
  var $goalKeeperRightArray = [0,250];
  var $goalKeeperCentreArray = [111,250];
@@ -19,30 +16,29 @@ $(function(event) {
  var ballPosition = 0;
  var ballTopPosition = 0;
  var $winnerBoard = $('#winner');
- var $playAgainTextBoard = $('#playAgainTextBoard')
+ var $playAgainTextBoard = $('#playAgainTextBoard');
  $keeperScore.html("Keeper: " + save);
  $strikerScore.html("Striker: " + goal);
 
 
 
 //generates a random move for the keeper
-
 function randomKeeperMove(){
 
   if(ballPosition > 678 && ballPosition < 805){
-    keeperPosition = $goalKeeperLeftArray[Math.floor(Math.random() * 2)]
+    keeperPosition = $goalKeeperLeftArray[Math.floor(Math.random() * 2)];
     $goalkeeper.animate({
       left: keeperPosition + "px"
     },100);
   }
   else if(ballPosition > 747 && ballPosition < 913){
-    keeperPosition = $goalKeeperCentreArray[Math.floor(Math.random() * 2)]
+    keeperPosition = $goalKeeperCentreArray[Math.floor(Math.random() * 2)];
     $goalkeeper.animate({
       left: keeperPosition + "px"
     },100);
   }
   else if(ballPosition > 884 && ballPosition < 1001){
-    keeperPosition = $goalKeeperRightArray[Math.floor(Math.random() * 2)]
+    keeperPosition = $goalKeeperRightArray[Math.floor(Math.random() * 2)];
     $goalkeeper.animate({
       left: keeperPosition + "px"
     },100);
@@ -52,7 +48,6 @@ function randomKeeperMove(){
 }
 
 // event listener for when an area of the goal is clicked
-
 $theActualGoal.click(function(event){
 
   // moves the keeper
@@ -85,7 +80,7 @@ $theActualGoal.click(function(event){
 
 });
 
-
+// this function determines whether a point is awarded to the keeper or the striker
 function saveOrGoal() {
 
   if(keeperPosition == 0 && ballPosition > 678 && ballPosition < 805){
@@ -122,9 +117,9 @@ $startAgain.click(function(){
 
 });
 
-// checks the bestscore out of a possible 5
+// checks after each penalty whether the keeper or striker has 10 points
 function checkScore(){
-  // each time a score is gained, check to see the whether someone has one the best of five
+
   if(goal == 10) {
     $winnerBoard.append('You won!! ');
     $playAgainTextBoard.append("Click Play Again");
