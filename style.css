@@ -94,7 +94,7 @@
 }
 
 #theActualGoal{
-  border: 1px solid red;
+  border: 1px solid black;
 }
 
 h3 {
@@ -115,5 +115,5 @@ span{
 #playAgainTextBoard{
   text-align: center;
   color: yellow;
-  font-size: 311%;  
+  font-size: 311%;
 }

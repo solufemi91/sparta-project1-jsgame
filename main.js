@@ -1,24 +1,24 @@
 $(function(event) {
 
-var $goalkeeper = $('#goalkeeper');
-var $footballImage = $('#football');
-var $keeperScore = $('#keeperScore');
-var $strikerScore = $('#strikerScore');
-var goal = 0;
-var save = 0;
-var ballDistance = 0;
-var $startAgain = $('button');
-var $theActualGoal = $('#theActualGoal');
-var $container = $('.container');
-var $body = $('body');
-var $goalKeeperLeftArray = [0,0,0,250,250];
-var $goalKeeperRightArray = [250,250,250,0,0];
-var $goalKeeperCentreArray = [111,111,111,0,250];
-var keeperPosition = 0;
-var ballPosition = 0;
-var ballTopPosition = 0;
-var $winnerBoard = $('#winner');
-var $playAgainTextBoard = $('#playAgainTextBoard')
+ var $goalkeeper = $('#goalkeeper');
+ var $footballImage = $('#football');
+ var $keeperScore = $('#keeperScore');
+ var $strikerScore = $('#strikerScore');
+ var goal = 0;
+ var save = 0;
+ var ballDistance = 0;
+ var $startAgain = $('button');
+ var $theActualGoal = $('#theActualGoal');
+ var $container = $('.container');
+ var $body = $('body');
+ var $goalKeeperLeftArray = [0,0,0,250,250];
+ var $goalKeeperRightArray = [250,250,250,0,0];
+ var $goalKeeperCentreArray = [111,111,111,0,250];
+ var keeperPosition = 0;
+ var ballPosition = 0;
+ var ballTopPosition = 0;
+ var $winnerBoard = $('#winner');
+ var $playAgainTextBoard = $('#playAgainTextBoard')
 
 
 
@@ -78,7 +78,7 @@ $theActualGoal.click(function(event){
   // return keeper to  default position
   $goalkeeper.animate({
     left: '111px'
-  }, 1000)
+  }, 1000);
 
 });
 
@@ -108,7 +108,6 @@ function saveOrGoal() {
 }
 
 // resets the game
-
 $startAgain.click(function(){
   goal = 0;
   save = 0;
@@ -133,14 +132,5 @@ function checkScore(){
 
   }
 
-}
-
-
-
-
-
-
-
-
-
+ }
 });
