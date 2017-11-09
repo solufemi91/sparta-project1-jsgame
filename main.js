@@ -11,35 +11,35 @@ var $startAgain = $('button');
 var $theActualGoal = $('#theActualGoal');
 var $container = $('.container');
 var $body = $('body');
-var $goalKeeperPositionsArray = [0,0,111,250,250];
-var $goalKeeperLeftArray = [0,0,250]
-var $goalKeeperRightArray = [0,250,250]
-var $goalKeeperCentreArray = [111,111,0,250]
+var $goalKeeperLeftArray = [0,0,0,250,250];
+var $goalKeeperRightArray = [250,250,250,0,0];
+var $goalKeeperCentreArray = [111,111,111,0,250];
 var keeperPosition = 0;
 var ballPosition = 0;
-var ballTopPosition = 0
-var $winnerBoard = $('#winner')
+var ballTopPosition = 0;
+var $winnerBoard = $('#winner');
+var $playAgainTextBoard = $('#playAgainTextBoard')
 
 
 
 //generates a random move for the keeper
 
 function randomKeeperMove(){
-  
+
   if(ballPosition > 678 && ballPosition < 805){
-    keeperPosition = $goalKeeperLeftArray[Math.floor(Math.random() * 3)]
+    keeperPosition = $goalKeeperLeftArray[Math.floor(Math.random() * 5)]
     $goalkeeper.animate({
       left: keeperPosition + "px"
     },100);
   }
   else if(ballPosition > 747 && ballPosition < 913){
-    keeperPosition = $goalKeeperCentreArray[Math.floor(Math.random() * 4)]
+    keeperPosition = $goalKeeperCentreArray[Math.floor(Math.random() * 5)]
     $goalkeeper.animate({
       left: keeperPosition + "px"
     },100);
   }
   else if(ballPosition > 884 && ballPosition < 1001){
-    keeperPosition = $goalKeeperCentreArray[Math.floor(Math.random() * 4)]
+    keeperPosition = $goalKeeperRightArray[Math.floor(Math.random() * 5)]
     $goalkeeper.animate({
       left: keeperPosition + "px"
     },100);
@@ -69,12 +69,13 @@ $theActualGoal.click(function(event){
 
   saveOrGoal();
 
+  // return football to default position
   $footballImage.animate({
     top: '338px',
     left: '835px' ,
 
   },1000);
-
+  // return keeper to  default position
   $goalkeeper.animate({
     left: '111px'
   }, 1000)
@@ -113,6 +114,8 @@ $startAgain.click(function(){
   save = 0;
   $keeperScore.html("Keeper: " + save);
   $strikerScore.html("Striker: " + goal);
+  $winnerBoard.html('');
+  $playAgainTextBoard.html('');
 
 
 });
@@ -121,10 +124,12 @@ $startAgain.click(function(){
 function checkScore(){
   // each time a score is gained, check to see the whether someone has one the best of five
   if(goal == 10) {
-    $winnerBoard.append('You won!!')
+    $winnerBoard.append('You won!! ');
+    $playAgainTextBoard.append("Click Play Again");
 
   } else if(save == 10) {
-    $winnerBoard.append('You loose!!')
+    $winnerBoard.append('You loose!!');
+    $playAgainTextBoard.append("Click Play Again");
 
   }
 

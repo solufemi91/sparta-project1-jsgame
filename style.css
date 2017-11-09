@@ -111,3 +111,9 @@ span{
   color: yellow;
   font-size: 411%;
 }
+
+#playAgainTextBoard{
+  text-align: center;
+  color: yellow;
+  font-size: 311%;  
+}
