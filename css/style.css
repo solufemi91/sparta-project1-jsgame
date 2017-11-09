@@ -89,12 +89,16 @@ button {
 
 #strikerScore{
   color: green;
-  text-align: center;;
+  text-align: center;
+  font-size: 21px;
+  margin-top: -11px;
 }
 
 #keeperScore{
   color: green;
   text-align: center;
+  font-size: 21px;
+  margin-top: -13px;
 }
 
 #theActualGoal{
@@ -150,7 +154,8 @@ h3 {
 
 #rightSideOfGoal{
   border-bottom: 3px solid white;
-  background-color: red;
+  background-color: #ff000063;
+
 }
 
 #penaltyArea{
