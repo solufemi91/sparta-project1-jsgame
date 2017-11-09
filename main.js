@@ -129,7 +129,7 @@ function checkScore(){
     $playAgainTextBoard.append("Click Play Again");
 
   } else if(save == 10) {
-    $winnerBoard.append('You loose!!');
+    $winnerBoard.append('You lose!!');
     $playAgainTextBoard.append("Click Play Again");
 
   }
