@@ -4,7 +4,7 @@ button {
   margin-top: 32px;
   height: 38px;
   color: green;
-  background: yellow;
+  background: white;
 }
 
 .container{
@@ -53,10 +53,10 @@ button {
 }
 
 .col-lg-4 {
-   position: relative;
-   min-height: 1px;
-   padding-right: 0px;
-   padding-left: 0px;
+  position: relative;
+  min-height: 1px;
+  padding-right: 0px;
+  padding-left: 0px;
 
 }
 
@@ -143,28 +143,14 @@ h3 {
 #northEastOfGoal{
   border-bottom: 3px solid white;
   background-size: 190px;
-  background-image: url('./images/stoke crowd.png');  
+  background-image: url('./images/stoke crowd.png');
 }
 
 
-
-
-
-#advertisingBoard{
-
-}
-
-#nike{
-  vertical-align: middle;
-  height: 39px;
-  width: 83px;
-  margin-top: 54px;
-  margin-left: 18px;
-}
 
 #rightSideOfGoal{
   border-bottom: 3px solid white;
-  background-color: black;
+  background-color: red;
 }
 
 #penaltyArea{

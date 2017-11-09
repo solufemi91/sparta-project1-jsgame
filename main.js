@@ -1,5 +1,6 @@
 $(function(event) {
 
+
  var $goalkeeper = $('#goalkeeper');
  var $footballImage = $('#football');
  var $keeperScore = $('#keeperScore');
@@ -11,9 +12,9 @@ $(function(event) {
  var $theActualGoal = $('#theActualGoal');
  var $container = $('.container');
  var $body = $('body');
- var $goalKeeperLeftArray = [0,0,0,250,250];
- var $goalKeeperRightArray = [250,250,250,0,0];
- var $goalKeeperCentreArray = [111,111,111,0,250];
+ var $goalKeeperLeftArray = [0,250];
+ var $goalKeeperRightArray = [0,250];
+ var $goalKeeperCentreArray = [111,250];
  var keeperPosition = 0;
  var ballPosition = 0;
  var ballTopPosition = 0;
@@ -29,19 +30,19 @@ $(function(event) {
 function randomKeeperMove(){
 
   if(ballPosition > 678 && ballPosition < 805){
-    keeperPosition = $goalKeeperLeftArray[Math.floor(Math.random() * 5)]
+    keeperPosition = $goalKeeperLeftArray[Math.floor(Math.random() * 2)]
     $goalkeeper.animate({
       left: keeperPosition + "px"
     },100);
   }
   else if(ballPosition > 747 && ballPosition < 913){
-    keeperPosition = $goalKeeperCentreArray[Math.floor(Math.random() * 5)]
+    keeperPosition = $goalKeeperCentreArray[Math.floor(Math.random() * 2)]
     $goalkeeper.animate({
       left: keeperPosition + "px"
     },100);
   }
   else if(ballPosition > 884 && ballPosition < 1001){
-    keeperPosition = $goalKeeperRightArray[Math.floor(Math.random() * 5)]
+    keeperPosition = $goalKeeperRightArray[Math.floor(Math.random() * 2)]
     $goalkeeper.animate({
       left: keeperPosition + "px"
     },100);
