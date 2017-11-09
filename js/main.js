@@ -50,8 +50,6 @@ function randomKeeperMove(){
 // event listener for when an area of the goal is clicked
 $theActualGoal.click(function(event){
 
-  // moves the keeper
-
   // moves the ball to where the person choose to shoot
   $footballImage.animate({
     top: event.pageY -30 + "px",
@@ -60,8 +58,6 @@ $theActualGoal.click(function(event){
 
   ballTopPosition = event.pageY -30;
   ballPosition = event.pageX -33.5;
-  console.log("The keeper position is: " + keeperPosition);
-  console.log("The ball position is: " + ballPosition);
 
   randomKeeperMove();
 

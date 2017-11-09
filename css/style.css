@@ -83,19 +83,19 @@ button {
 }
 
 .scoreboard{
-  color: green;
+  color: white;
   text-align: center;
 }
 
 #strikerScore{
-  color: green;
+  color: white;
   text-align: center;
   font-size: 21px;
   margin-top: -11px;
 }
 
 #keeperScore{
-  color: green;
+  color: white;
   text-align: center;
   font-size: 21px;
   margin-top: -13px;
@@ -103,8 +103,8 @@ button {
 
 #theActualGoal{
   border-top: 3px solid white;
-  border-left: 3px solid white;
-  border-right: 3px solid white;
+  border-left: 5px solid white;
+  border-right: 5px solid white;
 }
 
 h3 {
@@ -132,19 +132,19 @@ h3 {
 }
 
 #leftSideOfGoal{
-  border-bottom: 3px solid white;
+  border-bottom: 1px solid white;
   background-size: 190px;
   background-image: url('../images/stoke crowd.png');
 }
 
 #northWestOfGoal{
-  border-bottom: 3px solid white;
+  border-bottom: 1px solid black;
   background-size: 190px;
   background-image: url('../images/stoke crowd.png');
 }
 
 #northEastOfGoal{
-  border-bottom: 3px solid white;
+  border-bottom: 3px solid black;
   background-size: 190px;
   background-image: url('../images/stoke crowd.png');
 }
@@ -152,8 +152,8 @@ h3 {
 
 
 #rightSideOfGoal{
-  border-bottom: 3px solid white;
-  background-color: #ff000063;
+  border-bottom: 1px solid white;
+  background-color: black;
 
 }
 
