@@ -37,6 +37,7 @@ Your game must:
 
 ## Planning
 ![trello](images/trello.png)
+![wireframe](images/wireframe.jpg)
 
 
 ## The most challenging part
