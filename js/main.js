@@ -40,7 +40,6 @@ function randomKeeperMove(){
       left: keeperPosition + "px"
     },100);
   }
-
 }
 
 // event listener for when an area of the goal is clicked
@@ -65,15 +64,12 @@ $theActualGoal.click(function(event){
     $footballImage.animate({
       top: '338px',
       left: '835px' ,
-
     },1000);
     // return keeper to  default position
     $goalkeeper.animate({
       left: '111px'
     }, 1000);
   }
-
-
 });
 
 // this function determines whether a point is awarded to the keeper or the striker
@@ -109,8 +105,6 @@ $startAgain.click(function(){
   $strikerScore.html("Striker: " + goal);
   $winnerBoard.html('');
   $playAgainTextBoard.html('');
-
-
 });
 
 // checks after each penalty whether the keeper or striker has 10 points
@@ -123,8 +117,6 @@ function checkScore(){
   } else if(save == 10) {
     $winnerBoard.append('You lose!!');
     $playAgainTextBoard.append("Click Play Again");
-
   }
-
  }
 });
