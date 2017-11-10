@@ -49,7 +49,7 @@ function randomKeeperMove(){
 
 // event listener for when an area of the goal is clicked
 $theActualGoal.click(function(event){
-
+  // the you can only shoot if neither player as reached 10 points
   if(save !== 10 && goal !== 10){
     // moves the ball to where the person choose to shoot
     $footballImage.animate({
@@ -57,6 +57,7 @@ $theActualGoal.click(function(event){
       left: event.pageX -33.5 + "px",
     }, 50);
 
+    // returns the centre point of the ball
     ballTopPosition = event.pageY -30;
     ballPosition = event.pageX -33.5;
 

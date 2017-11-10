@@ -38,7 +38,7 @@ Your game must:
 
 ## The most challenging part
 
-One of the things I struggled with was creating a program that would register when the keeper came in contact with the ball. I also struggled at first to implement variation on the shots.
+One of the things I struggled with was creating a program that would register when the keeper came in contact with the ball. I also struggled at first to implement variation on the shots. I also had difficulty customising the cursor to an image of my choice. I would have liked a bigger crosshair.
 
 ## What I was most pleased with
 
