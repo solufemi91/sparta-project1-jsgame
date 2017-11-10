@@ -39,3 +39,7 @@ Your game must:
 ## The most challenging part
 
 One of the things I struggled with was creating a program that would register when the keeper came in contact with the ball. I also struggled at first to implement variation on the shots.
+
+## What I was most pleased with
+
+I really like the animations I have used in relation to movement of the keeper and the ball. I am also happy with how managed to record when the keeper came in contact with the ball.

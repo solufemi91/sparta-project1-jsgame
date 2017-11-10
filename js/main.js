@@ -15,7 +15,7 @@ $(function(event) {
  var keeperPosition = 0;
  var ballPosition = 0;
  var ballTopPosition = 0;
- var $winnerBoard = $('#winner');
+ var $winnerBoard = $('#winnerBoard');
  var $playAgainTextBoard = $('#playAgainTextBoard');
  $keeperScore.html("Keeper: " + save);
  $strikerScore.html("Striker: " + goal);

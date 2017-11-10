@@ -21,7 +21,6 @@ button {
   height: 100px;
   background: green;
   background-image: url('../images/netting2.png');
-
 }
 
 .three{
@@ -49,7 +48,6 @@ button {
 .pre{
   background-color: blue;
   height: 100px;
-
 }
 
 .col-lg-4 {
@@ -57,7 +55,6 @@ button {
   min-height: 1px;
   padding-right: 0px;
   padding-left: 0px;
-
 }
 
 
@@ -124,6 +121,11 @@ h3 {
   background-color: #5a98d0;
 }
 
+#winnerBoard{
+  text-align: center;
+  color: yellow;
+  font-size: 311%
+}
 #playAgainTextBoard{
   text-align: center;
   color: yellow;
@@ -142,14 +144,14 @@ h3 {
   border-bottom: 1px solid black;
   background-size: 190px;
   background-color: #5a98d0;
-  /*background-image: url('../images/stoke crowd.png');*/
+
 }
 
 #northEastOfGoal{
   border-bottom: 3px solid black;
   background-size: 190px;
   background-color: #5a98d0;
-  /*background-image: url('../images/stoke crowd.png');*/
+
 }
 
 
