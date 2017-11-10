@@ -35,6 +35,9 @@ Your game must:
 * As a user I would like to be able to influence the height of my shot.
 * As a user, I would like to see the keeper react and try and save my shot.
 
+## Planning
+![trello](images/trello.png)
+
 
 ## The most challenging part
 
