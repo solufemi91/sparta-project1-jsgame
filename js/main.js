@@ -1,6 +1,5 @@
 $(function(event) {
 
-
  var $goalkeeper = $('#goalkeeper');
  var $footballImage = $('#football');
  var $keeperScore = $('#keeperScore');
@@ -19,8 +18,6 @@ $(function(event) {
  var $playAgainTextBoard = $('#playAgainTextBoard');
  $keeperScore.html("Keeper: " + save);
  $strikerScore.html("Striker: " + goal);
-
-
 
 //generates a random move for the keeper
 function randomKeeperMove(){
@@ -43,7 +40,6 @@ function randomKeeperMove(){
       left: keeperPosition + "px"
     },100);
   }
-
 
 }
 
