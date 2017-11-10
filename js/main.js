@@ -50,29 +50,32 @@ function randomKeeperMove(){
 // event listener for when an area of the goal is clicked
 $theActualGoal.click(function(event){
 
-  // moves the ball to where the person choose to shoot
-  $footballImage.animate({
-    top: event.pageY -30 + "px",
-    left: event.pageX -33.5 + "px",
-  }, 50);
+  if(save !== 10 && goal !== 10){
+    // moves the ball to where the person choose to shoot
+    $footballImage.animate({
+      top: event.pageY -30 + "px",
+      left: event.pageX -33.5 + "px",
+    }, 50);
 
-  ballTopPosition = event.pageY -30;
-  ballPosition = event.pageX -33.5;
+    ballTopPosition = event.pageY -30;
+    ballPosition = event.pageX -33.5;
 
-  randomKeeperMove();
+    randomKeeperMove();
 
-  saveOrGoal();
+    saveOrGoal();
 
-  // return football to default position
-  $footballImage.animate({
-    top: '338px',
-    left: '835px' ,
+    // return football to default position
+    $footballImage.animate({
+      top: '338px',
+      left: '835px' ,
 
-  },1000);
-  // return keeper to  default position
-  $goalkeeper.animate({
-    left: '111px'
-  }, 1000);
+    },1000);
+    // return keeper to  default position
+    $goalkeeper.animate({
+      left: '111px'
+    }, 1000);
+  }
+
 
 });
 
