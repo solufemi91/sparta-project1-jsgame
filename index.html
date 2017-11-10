@@ -2,64 +2,34 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>My Football game</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-    <script src="js/main.js" async></script>
+    <title>Homepage</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link rel="stylesheet" href="css/home.css">
   </head>
   <body>
-    <span class="custom">
     <div class="container">
-      <img id="football"src="images/football.png" alt="">
       <div class="row">
-        <div class="col-lg-4 one" id="northWestOfGoal">
-          <img class="supporters"src="images/supporters.png" alt="">
-        </div>
-        <div class="col-lg-4 one" id="winner">
-          <img class="supporters"src="images/supporters.png" alt="">
-        </div>
-        <div class="col-lg-4 one" id="northEastOfGoal">
-          <img class="supporters"src="images/supporters.png" alt="">
+        <div class="col-lg-12 one">
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-4 three" id="leftSideOfGoal">
-          <div id="advert">
-            <img id="nike" src="images/nike.png" alt="image not here">
-            <img id="maccies"src="images/maccies.png" alt="">
-            <img id="champions" src="images/championsleague.png" alt="">
-          </div>
+        <div class="col-lg-4 three">
+          <a href="./game.html"><button id="startGame" type="button" name="button">Start Game</button></a>
         </div>
-        <div class="col-lg-4 two" id="theActualGoal">
-          <img id="goalkeeper" src="images/goalie2.png" alt="image is not here">
+        <div class="col-lg-4 two">
+          <h1 id="headerTitlePage">Penalty ShootOut!</h1>
+          <img id="messi" src="./images/messironaldo.png" alt="picture not here">
         </div>
-        <div class="col-lg-4 three" id="rightSideOfGoal">
-          <h3 class="scoreboard">The Scoreboard</h3>
-          <p id="keeperScore">Keeper: </p>
-          <p id="strikerScore">Striker: </p>
+        <div class="col-lg-4 three">
+          <p class="instructions">
+            Welcome to Penalty Shootout! Click an area of the goal to shoot in a particular direction. The first to get to 10 points wins!Note: The whole of the ball must be in the goal to  gain a point
+          </p>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-4 one" id="playAgainTextBoard">
-        </div>
-        <div class="col-lg-4 one" id="penaltyArea">
-          <img id="penaltybox"src="images/penaltybox.jpeg" alt="image is not here">
-        </div>
-        <div class="col-lg-4 one" id="winnerBoard">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 one">
-         <button type="button" name="button">Play again</button>
-        </div>
-        <div class="col-lg-4 one">
-        </div>
-        <div class="col-lg-4 one">
-          <a href="./home.html"><button type="button" name="button">Back to Home</button></a>
+        <div class="col-lg-12 one">
         </div>
       </div>
     </div>
-    </span>
   </body>
 </html>
