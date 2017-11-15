@@ -8,9 +8,9 @@ $(function(event) {
  var save = 0;
  var $startAgain = $('button');
  var $theActualGoal = $('#theActualGoal');
- var $goalKeeperLeftArray = [0,250];
- var $goalKeeperRightArray = [0,250];
- var $goalKeeperCentreArray = [111,250];
+ var $goalKeeperLeftArray = [0,231];
+ var $goalKeeperRightArray = [0,231];
+ var $goalKeeperCentreArray = [111,231];
  var keeperPosition = 0;
  var ballPosition = 0;
  var ballTopPosition = 0;
@@ -22,19 +22,19 @@ $(function(event) {
 //generates a random move for the keeper
 function randomKeeperMove(){
 
-  if(ballPosition > 678 && ballPosition < 805){
+  if(ballPosition > 500 && ballPosition < 679){
     keeperPosition = $goalKeeperLeftArray[Math.floor(Math.random() * 2)];
     $goalkeeper.animate({
       left: keeperPosition + "px"
     },100);
   }
-  else if(ballPosition > 747 && ballPosition < 913){
+  else if(ballPosition > 578 && ballPosition < 783){
     keeperPosition = $goalKeeperCentreArray[Math.floor(Math.random() * 2)];
     $goalkeeper.animate({
       left: keeperPosition + "px"
     },100);
   }
-  else if(ballPosition > 884 && ballPosition < 1001){
+  else if(ballPosition > 697 && ballPosition < 841){
     keeperPosition = $goalKeeperRightArray[Math.floor(Math.random() * 2)];
     $goalkeeper.animate({
       left: keeperPosition + "px"
@@ -56,6 +56,8 @@ $theActualGoal.click(function(event){
     ballTopPosition = event.pageY -30;
     ballPosition = event.pageX -33.5;
 
+    console.log(ballPosition)
+
     randomKeeperMove();
 
     saveOrGoal();
@@ -63,7 +65,7 @@ $theActualGoal.click(function(event){
     // return football to default position
     $footballImage.animate({
       top: '338px',
-      left: '835px' ,
+      left: '686px' ,
     },1000);
     // return keeper to  default position
     $goalkeeper.animate({
@@ -75,16 +77,16 @@ $theActualGoal.click(function(event){
 // this function determines whether a point is awarded to the keeper or the striker
 function saveOrGoal() {
 
-  if(keeperPosition == 0 && ballPosition > 678 && ballPosition < 805){
+  if(keeperPosition == 0 && ballPosition > 531.5 && ballPosition < 679){
     save++;
     $keeperScore.html('Keeper: ' + save);
-  } else if(keeperPosition == 111 && ballPosition > 747 && ballPosition < 913){
+  } else if(keeperPosition == 111 && ballPosition > 578 && ballPosition < 783){
     save++;
     $keeperScore.html('Keeper: ' + save);
-  } else if(keeperPosition == 250 && ballPosition > 884 && ballPosition < 1001){
+  } else if(keeperPosition == 231 && ballPosition > 697 && ballPosition < 841){
     save++;
     $keeperScore.html('Keeper: ' + save);
-  } else if(ballPosition < 677 || ballPosition > 1001){
+  } else if(ballPosition < 521 || ballPosition > 854){
     save++;
     $keeperScore.html('Keeper: ' + save);
   } else if(ballTopPosition < 99 || ballTopPosition > 139){
