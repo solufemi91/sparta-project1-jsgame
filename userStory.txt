@@ -1,0 +1,14 @@
+1. As a user I want to be able to control the direction of my shot so I can influence how effective at the game I am.
+2. As a user i want to be notified of the direction my shot is going to be going before my shot is taken.
+3. As a user i want to be able to control the power of my shot.
+4. As a user I want to be able to control the height of my shot
+5. As a user I want to be notified when a goal is scored.
+6. As user I want a scoreboard to show the points I have gained so i can keep track of my progress during the game
+7. As a user, I want the ball to be kicked the instant I press the shoot button so that I can accurately judge when the ball will reach its target
+8. I want the ball to rebound off the keeper or goalposts if the ball comes into contact with it.
+9. As a user, I want a notification if a penalty is missed.
+10. As a user, I want the game to look like a football; pitch
+11. As a user, I want the goal keeper to react and try and save my shot after it is taken.
+12. As a user, I want the background behind the keeper to look like an actual football pitch.
+13. As a user I want the character that I am controlling in the game to look like a footballer.
+14. As a user, I want the goal keeper to like an actually goal keeper.

@@ -1,0 +1,202 @@
+
+button {
+  margin-left: 136px;
+  margin-top: 32px;
+  height: 38px;
+  color: green;
+  background: white;
+}
+
+.container{
+  background-color: none;
+}
+
+.one{
+ background-color: green;
+ height: 100px;
+
+}
+
+#theActualGoal{
+  height: 100px;
+  background: green;
+  background-image: url('../images/netting2.png');
+}
+
+.three{
+  background-color: yellow;
+  height: 100px;
+
+}
+
+.four{
+  background-color: pink;
+  height: 100px;
+}
+
+.five{
+  background-color: yellow;
+  height: 100px;
+}
+
+.six{
+  background-color: green;
+  height: 100px;
+}
+
+
+.pre{
+  background-color: blue;
+  height: 100px;
+}
+
+.col-lg-4 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+
+#goalkeeper{
+  width: 148px;
+  height: 98px;
+  left: 111px;
+  position: absolute;
+}
+#football{
+  vertical-align: middle;
+  height: 60px;
+  width: 67px;
+  left: 686px;
+  top: 338px;
+  position: absolute;
+  z-index: 100;
+}
+
+#penaltybox{
+  width: 100%;
+  height: 100%;
+}
+
+.scoreboard{
+  color: white;
+  text-align: center;
+}
+
+#strikerScore{
+  color: white;
+  text-align: center;
+  font-size: 21px;
+  margin-top: -11px;
+}
+
+#keeperScore{
+  color: white;
+  text-align: center;
+  font-size: 21px;
+  margin-top: -13px;
+}
+
+#theActualGoal{
+  border-top: 3px solid white;
+  border-left: 5px solid white;
+  border-right: 5px solid white;
+}
+
+h3 {
+  font-size: 24px;
+  margin-top: 3px;
+}
+
+.custom{
+  cursor: crosshair;
+}
+
+#winner{
+  text-align: center;
+  font-size: 411%;
+  border-bottom: 3px solid white;
+  background-size: 190px;
+  background-color: #5a98d0;
+}
+
+#winnerBoard{
+  text-align: center;
+  color: yellow;
+  font-size: 311%
+}
+#playAgainTextBoard{
+  text-align: center;
+  color: yellow;
+  font-size: 311%;
+}
+
+#leftSideOfGoal{
+  border-bottom: 1px solid white;
+  background-size: 420px;
+  background-color: #5a98d0;
+  background-image: url(../images/supporters.png);
+  background-repeat: no-repeat;
+}
+
+#northWestOfGoal{
+  border-bottom: 1px solid black;
+  background-size: 190px;
+  background-color: #5a98d0;
+
+}
+
+#northEastOfGoal{
+  border-bottom: 3px solid black;
+  background-size: 190px;
+  background-color: #5a98d0;
+
+}
+
+
+
+#rightSideOfGoal{
+  border-bottom: 1px solid white;
+  background-color: black;
+
+}
+
+#penaltyArea{
+  border-bottom: 1.5px solid white;
+  border-left:  1.5px solid white;
+  border-right: 1.5px solid white;
+}
+
+#advert{
+  width: 389px;
+  height: 46px;
+  margin-top: 53px;
+  background: red;
+}
+
+#nike{
+  width: 93px;
+  height: 36px;
+  margin-left: 32px;
+  margin-top: 4px;
+
+}
+
+#maccies{
+  width: 93px;
+  height: 37px;
+  margin-left: 21px;
+}
+
+#champions{
+  width: 93px;
+  height: 38px;
+  margin-left: 24px;
+  margin-top: 4px
+}
+
+.supporters{
+  width: 387px;
+  height: 96px;
+}

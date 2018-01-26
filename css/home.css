@@ -1,0 +1,37 @@
+
+
+#headerTitlePage{
+  background: #ff00009e;
+  border-radius: 9px;
+  text-align: center;
+  padding: 10px 20px;
+}
+body{
+  background: url('../images/stadium.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#messi{
+  vertical-align: middle;
+  height: 500px;
+  width: 376px;
+}
+
+#startGame{
+  margin-top: 311px;
+  margin-left: 144px;
+  border-radius: 9px;
+  background: #ff000073;
+}
+
+
+.instructions{
+  margin-top: 194px;
+  background: #dc869396;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 25px;
+  border-radius: 25px;
+}
